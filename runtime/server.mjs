@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import pty from 'node-pty';
 import WebSocket, { WebSocketServer } from 'ws';
 import { parseCommandLine } from './command-line.mjs';
+import { buildPtyProcess } from './pty-command.mjs';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(ROOT, 'public');
@@ -125,10 +126,11 @@ function startSession(options = {}) {
   delete terminalEnv.NO_COLOR;
 
   const [executable, ...commandArgs] = parseCommandLine(command);
+  const ptyProcess = buildPtyProcess(executable, commandArgs);
 
   let session;
   try {
-    session = pty.spawn(executable, commandArgs, {
+    session = pty.spawn(ptyProcess.executable, ptyProcess.args, {
       name: 'xterm-256color',
       cols,
       rows,

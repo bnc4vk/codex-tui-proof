@@ -15,7 +15,7 @@ Include affected versions, reproduction steps, impact, and any suggested mitigat
 ## Security model
 
 - The proof server binds only to `127.0.0.1` and has no remote-access mode.
-- The selected executable intentionally runs with the local user's permissions. The launcher parses arguments directly and does not invoke a shell.
+- The selected executable intentionally runs with the local user's permissions. The launcher parses arguments directly; Windows uses a fixed PowerShell bridge with executable and arguments passed separately.
 - The WebSocket accepts only an exact same-origin connection from the allocated `127.0.0.1` page.
 - PTY input and output are written to local JSONL recordings and may contain sensitive text.
 - Runtime dependencies are locked in `runtime/package-lock.json` and installed locally with `npm ci`.

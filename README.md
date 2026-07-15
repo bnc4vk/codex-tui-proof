@@ -96,7 +96,7 @@ node scripts/tui-proof.mjs start \
 
 `--port 0` prevents collisions between concurrent tasks. Run `node scripts/tui-proof.mjs --help` for the complete launcher syntax.
 
-Commands are parsed into an executable and arguments and are not passed through a shell. Shell operators such as pipes and redirects are intentionally unsupported; put complex setup in a reviewed script and launch that script instead.
+Commands are parsed into an executable and arguments and are not interpolated into a shell command. On Windows, a fixed PowerShell bridge resolves executables while keeping the parsed arguments separate. Shell operators such as pipes and redirects are intentionally unsupported; put complex setup in a reviewed script and launch that script instead.
 
 ## Privacy and security
 

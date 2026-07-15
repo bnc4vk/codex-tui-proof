@@ -10,8 +10,8 @@
   "scripts": {
     "postinstall": "node scripts/ensure-node-pty-helper.mjs",
     "start": "node server.mjs",
-    "check": "node --check server.mjs && node --check command-line.mjs && node --check public/app.js && node --check ../scripts/tui-proof.mjs && node --check ../scripts/smoke-test.mjs",
-    "test": "node --test command-line.test.mjs && node ../scripts/smoke-test.mjs"
+    "check": "node --check server.mjs && node --check command-line.mjs && node --check pty-command.mjs && node --check public/app.js && node --check ../scripts/tui-proof.mjs && node --check ../scripts/smoke-test.mjs",
+    "test": "node --test command-line.test.mjs pty-command.test.mjs && node ../scripts/smoke-test.mjs"
   },
   "dependencies": {
     "@xterm/xterm": "^5.5.0",
