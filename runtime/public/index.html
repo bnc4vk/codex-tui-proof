@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codex TUI Proof</title>
+    <link rel="stylesheet" href="/vendor/xterm/xterm.css">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <div class="eyebrow">CODEX · IN-APP BROWSER</div>
+          <h1>Codex TUI Proof</h1>
+          <p>Real local PTY · visual validation without desktop takeover</p>
+        </div>
+        <div class="status-wrap"><span id="status-dot"></span><span id="status" data-testid="status">connecting</span></div>
+      </header>
+
+      <section class="controls" aria-label="Session controls">
+        <label>Command <input id="command" data-testid="command" spellcheck="false"></label>
+        <label class="cwd">Working directory <input id="cwd" data-testid="cwd" spellcheck="false"></label>
+        <label>Cols <input id="cols" data-testid="cols" type="number" min="40" max="240"></label>
+        <label>Rows <input id="rows" data-testid="rows" type="number" min="12" max="80"></label>
+        <button id="restart" data-testid="restart">Start / restart</button>
+        <button id="stop" data-testid="stop" class="secondary">Stop</button>
+      </section>
+
+      <section class="terminal-frame" aria-label="Interactive terminal">
+        <div class="terminal-bar">
+          <span class="lights"><i></i><i></i><i></i></span>
+          <span id="session-label" data-testid="session-label">No active session</span>
+          <span id="dimensions" data-testid="dimensions">100 × 30</span>
+        </div>
+        <div id="terminal" data-testid="terminal"></div>
+      </section>
+
+      <footer>
+        <span id="metrics" data-testid="metrics">0 B in · 0 B out</span>
+        <span class="proof-mark">Browser proof · desktop untouched</span>
+        <span id="recording" data-testid="recording">Recordings stay local</span>
+      </footer>
+    </main>
+    <script src="/vendor/xterm/xterm.js"></script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

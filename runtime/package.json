@@ -1,0 +1,21 @@
+{
+  "name": "@codex-tui-proof/runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "postinstall": "node scripts/ensure-node-pty-helper.mjs",
+    "start": "node server.mjs",
+    "check": "node --check server.mjs && node --check command-line.mjs && node --check public/app.js && node --check ../scripts/tui-proof.mjs && node --check ../scripts/smoke-test.mjs",
+    "test": "node --test command-line.test.mjs && node ../scripts/smoke-test.mjs"
+  },
+  "dependencies": {
+    "@xterm/xterm": "^5.5.0",
+    "node-pty": "^1.0.0",
+    "ws": "^8.18.0"
+  }
+}

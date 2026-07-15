@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Codex TUI Proof</title>
+  <desc id="desc">A terminal window with a proof checkmark</desc>
+  <rect width="512" height="512" rx="104" fill="#0B0E14"/>
+  <rect x="72" y="88" width="368" height="304" rx="32" fill="#10141D" stroke="#7AA2F7" stroke-width="16"/>
+  <path d="M72 160h368" stroke="#252B38" stroke-width="16"/>
+  <circle cx="116" cy="124" r="10" fill="#F7768E"/>
+  <circle cx="148" cy="124" r="10" fill="#E0AF68"/>
+  <circle cx="180" cy="124" r="10" fill="#9ECE6A"/>
+  <path d="m126 238 46 38-46 38" fill="none" stroke="#C0CAF5" stroke-linecap="round" stroke-linejoin="round" stroke-width="22"/>
+  <path d="M202 314h66" stroke="#C0CAF5" stroke-linecap="round" stroke-width="22"/>
+  <circle cx="350" cy="286" r="70" fill="#9ECE6A"/>
+  <path d="m316 286 24 24 48-56" fill="none" stroke="#0B0E14" stroke-linecap="round" stroke-linejoin="round" stroke-width="22"/>
+</svg>
